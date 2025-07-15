@@ -1,9 +1,4 @@
-/* ==============================================
-Hometown Marketing Agency - Custom Stylesheet
-==============================================
-*/
-
-/* --- Root Variables --- */
+/* Root Variables */
 :root {
     --bg-light: #F9F9F9;
     --bg-alt: #FFFFFF;
@@ -14,7 +9,7 @@ Hometown Marketing Agency - Custom Stylesheet
     --border-color: #EAEAEA;
 }
 
-/* --- Base & Typography --- */
+/* Base Styles */
 html {
     background-color: var(--bg-light);
 }
@@ -32,13 +27,14 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+/* Utility Classes */
 .gradient-text {
     background: linear-gradient(to right, var(--accent-start), var(--accent-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* --- Navigation --- */
+/* Navigation */
 .nav-link {
     position: relative;
     transition: color 0.3s ease;
@@ -59,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
 }
 
-/* --- Buttons --- */
+/* Buttons */
 .cta-button {
     transition: all 0.3s ease;
     background: linear-gradient(to right, var(--accent-start), var(--accent-end));
@@ -71,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 20px rgba(0, 70, 67, 0.2);
 }
 
-/* --- Animations & Effects --- */
+/* Text Animation */
 .split-parent {
     /* overflow: hidden; */ /* Removed to prevent animation clipping */
 }
@@ -80,12 +76,13 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
 }
 
-/* --- Components --- */
+/* Testimonial */
 .testimonial-text {
     font-size: 2rem;
     line-height: 2.75rem;
     font-weight: 500;
 }
+
 @media (min-width: 768px) {
     .testimonial-text {
         font-size: 2.5rem;
@@ -93,6 +90,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Bento Grid */
 .bento-grid-item {
     background-color: var(--bg-alt);
     border: 1px solid var(--border-color);
@@ -106,6 +104,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 20px 30px -10px rgba(0,0,0,0.08);
 }
 
+/* Work Items */
 .work-item-image-wrap {
     overflow: hidden;
     border-radius: 0.5rem;
@@ -141,6 +140,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
 }
 
+/* Team Members */
 .team-member-photo {
     filter: grayscale(100%);
     transition: filter 0.3s ease;
@@ -151,6 +151,7 @@ h1, h2, h3, h4, h5, h6 {
     filter: grayscale(0%);
 }
 
+/* FAQ */
 .faq-item {
     border-bottom: 1px solid var(--border-color);
 }
@@ -176,6 +177,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+/* Process Steps */
 .process-step::before {
     content: '';
     position: absolute;
@@ -192,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 
-/* Marquee Styles */
+/* Marquee */
 .marquee {
     overflow: hidden;
     white-space: nowrap;
@@ -216,12 +218,57 @@ h1, h2, h3, h4, h5, h6 {
     100% { transform: translateX(-50%); }
 }
 
-/* --- Growth Grader / Analyzer Styles --- */
-.results-card {
-    background-color: var(--bg-alt);
-    border: 1px solid var(--border-color);
-    border-radius: 1rem;
-    padding: 2.5rem;
-    margin-top: 2rem;
-    text-align: left;
+/* Growth Grader Specific Styles */
+#analyzer-form {
+    transition: opacity 0.3s ease;
+}
+
+#results-area {
+    min-height: 400px;
+}
+
+.grade-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0 auto 2rem;
+    background: linear-gradient(to right, var(--accent-start), var(--accent-end));
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 70, 67, 0.3);
+}
+
+.metric-bar {
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.metric-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--accent-start), var(--accent-end));
+    transition: width 1s ease-out;
+}
+
+.recommendation-item {
+    padding: 1.5rem;
+    background-color: var(--bg-light);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-start);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grade-circle {
+        width: 150px;
+        height: 150px;
+        font-size: 3rem;
+    }
 }

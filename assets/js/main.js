@@ -1,11 +1,6 @@
-/* =====================================================
-Hometown Marketing Agency - Main JavaScript File
-=====================================================
-*/
-
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Check if GSAP and ScrollTrigger exist before using them ---
-    if (typeof gsap !== 'undefined') {
+    // Register GSAP plugins if available
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
     }
 
@@ -18,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollTriggers();
     initMobileMenu();
     initFaqAccordion();
-    initGrowthGrader(); // Initialize the new analyzer tool
+    initGrowthGrader();
     
     // --- CORE LOGIC ---
 
@@ -26,15 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
      * Animates the hero text on initial page load.
      */
     function initPageLoadAnimation() {
-        if (select(".split-child")) {
-            let tl = gsap.timeline();
-            tl.from(".split-child", { 
-                yPercent: 100, 
-                stagger: 0.1, 
-                duration: 0.8, 
-                ease: "power3.out" 
-            });
-        }
+        if (typeof gsap === 'undefined') return;
+        
+        let tl = gsap.timeline();
+        tl.from(".split-child", { 
+            yPercent: 100, 
+            stagger: 0.1, 
+            duration: 0.8, 
+            ease: "power3.out" 
+        });
     }
 
     /**
@@ -46,13 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (mobileMenuButton && mobileMenu) {
             mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+            
             selectAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
             });
         }
         
-        if(select('#year')) {
-            select('#year').textContent = new Date().getFullYear();
+        // Set current year in footer
+        const yearElement = select('#year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
         }
     }
 
@@ -61,11 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
      * Also adds a parallax effect to images within .work-item containers.
      */
     function initScrollTriggers() {
-        if (typeof gsap === 'undefined') {
-            console.warn("GSAP not loaded, skipping scroll animations.");
-            return;
-        }
-
+        if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+        
         // General fade-in animation for sections and elements
         selectAll('.fade-in').forEach(el => {
             gsap.from(el, {
@@ -116,56 +111,155 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
-     * Initializes the Growth Grader functionality on the analyzer page.
+     * Initializes the Growth Grader tool functionality
      */
     function initGrowthGrader() {
-        const analyzeButton = select('#analyze-button');
-        const resultsDiv = select('#results-area');
+        const form = select('#growth-grader-form');
+        const analyzerForm = select('#analyzer-form');
+        const resultsArea = select('#results-area');
+        const loadingState = select('#loading-state');
+        const resultsContent = select('#results-content');
 
-        if (!analyzeButton || !resultsDiv) {
-            // Do nothing if we're not on the analyzer page
-            return;
-        }
+        if (!form) return; // Exit if not on the analyzer page
 
-        analyzeButton.addEventListener('click', function() {
-            // 1. Show a loading message
-            resultsDiv.innerHTML = `<p class="text-center text-text-muted">Analyzing your digital presence...</p>`;
-            
-            // 2. Wait for 2 seconds, then show the example report
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const businessName = select('#business-name').value;
+            const websiteAddress = select('#website-address').value;
+
+            // Hide form and show results area
+            analyzerForm.style.display = 'none';
+            resultsArea.classList.remove('hidden');
+
+            // Show loading state
+            loadingState.classList.remove('hidden');
+            resultsContent.classList.add('hidden');
+
+            // Simulate analysis delay
             setTimeout(() => {
-                const exampleReportHTML = `
-                    <div class="results-card fade-in">
-                        <h3 class="text-2xl font-bold mb-4">Digital Growth Grade for: <span class="gradient-text">${select('#business-name').value || 'Your Business'}</span></h3>
-                        <div class="text-center border-y border-border-color py-6 my-6">
-                            <p class="text-text-muted text-sm uppercase tracking-widest">Overall Score</p>
-                            <p class="text-7xl font-bold">68<span class="text-3xl text-text-muted">/100</span></p>
-                            <p class="font-semibold text-orange-600 mt-2">Improvement Needed</p>
-                        </div>
-                        <div class="space-y-6">
-                            <div>
-                                <h4 class="font-bold text-lg">Local SEO: <span class="text-red-600">D+</span></h4>
-                                <p class="text-text-muted">Your business is not visible for critical Kansas City search terms. Customers using Google Maps are likely finding your competitors first.</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Social Media Presence: <span class="text-orange-500">C</span></h4>
-                                <p class="text-text-muted">Your social media activity is inconsistent. You are missing key opportunities to engage with the KC community during major events like Chiefs game days.</p>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Website Conversion: <span class="text-yellow-500">B-</span></h4>
-                                <p class="text-text-muted">Your website lacks a clear, compelling call-to-action on the homepage, causing potential customers to leave without contacting you.</p>
-                            </div>
-                        </div>
-                        <div class="mt-8 pt-6 border-t border-border-color text-center">
-                            <h4 class="text-xl font-bold">Ready to turn this grade into an A+?</h4>
-                            <p class="text-text-muted my-4">A score of 68 means your business has significant growth potential. HomeTown specializes in turning these problems into profits.</p>
-                            <a href="/contact.html" class="inline-block px-10 py-4 rounded-md font-semibold cta-button text-lg">
-                                Schedule Your Free Consultation
-                            </a>
-                        </div>
-                    </div>
-                `;
-                resultsDiv.innerHTML = exampleReportHTML;
-            }, 2000); // 2000 milliseconds = 2 seconds
+                // Hide loading state and show results
+                loadingState.classList.add('hidden');
+                resultsContent.classList.remove('hidden');
+
+                // Generate and display results
+                displayResults(businessName, websiteAddress);
+            }, 2000);
         });
+    }
+
+    /**
+     * Displays the Growth Grader results
+     */
+    function displayResults(businessName, websiteAddress) {
+        const resultsContent = select('#results-content');
+        
+        // Sample report data
+        const overallGrade = 'B+';
+        const metrics = [
+            { name: 'Website Performance', score: 75, feedback: 'Good loading speed, but room for optimization' },
+            { name: 'Mobile Responsiveness', score: 90, feedback: 'Excellent mobile experience' },
+            { name: 'SEO Optimization', score: 65, feedback: 'Missing key meta tags and structured data' },
+            { name: 'Content Quality', score: 85, feedback: 'Strong content, could benefit from more keywords' },
+            { name: 'User Experience', score: 80, feedback: 'Clear navigation, consider adding more CTAs' },
+            { name: 'Social Media Presence', score: 60, feedback: 'Inconsistent posting schedule detected' },
+            { name: 'Local SEO', score: 70, feedback: 'Google My Business needs optimization' },
+            { name: 'Conversion Optimization', score: 55, feedback: 'Missing clear conversion paths' }
+        ];
+
+        const recommendations = [
+            {
+                priority: 'High',
+                title: 'Improve Page Load Speed',
+                description: 'Optimize images and implement lazy loading to improve your site speed by 40%'
+            },
+            {
+                priority: 'High',
+                title: 'Add Schema Markup',
+                description: 'Implement structured data to improve search visibility and rich snippets'
+            },
+            {
+                priority: 'Medium',
+                title: 'Create Content Calendar',
+                description: 'Develop a consistent posting schedule for social media engagement'
+            },
+            {
+                priority: 'Medium',
+                title: 'Optimize Conversion Paths',
+                description: 'Add clear CTAs and simplify your contact forms to increase conversions'
+            }
+        ];
+
+        // Generate HTML
+        resultsContent.innerHTML = `
+            <div class="bg-bg-alt rounded-lg p-8 md:p-12 shadow-xl mb-12">
+                <h2 class="text-3xl font-bold text-center mb-8">Growth Grade Report for ${businessName}</h2>
+                
+                <!-- Overall Grade -->
+                <div class="text-center mb-12">
+                    <div class="grade-circle">${overallGrade}</div>
+                    <p class="text-xl text-text-muted">Your Overall Growth Grade</p>
+                    <p class="text-sm text-text-muted mt-2">Analyzed: ${websiteAddress}</p>
+                </div>
+
+                <!-- Metrics -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold mb-6">Performance Metrics</h3>
+                    <div class="space-y-6">
+                        ${metrics.map(metric => `
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">${metric.name}</span>
+                                    <span class="text-sm font-bold">${metric.score}%</span>
+                                </div>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: ${metric.score}%"></div>
+                                </div>
+                                <p class="text-sm text-text-muted mt-2">${metric.feedback}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- Recommendations -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Recommended Actions</h3>
+                    <div class="space-y-4">
+                        ${recommendations.map(rec => `
+                            <div class="recommendation-item">
+                                <div class="flex items-start justify-between mb-2">
+                                    <h4 class="font-bold">${rec.title}</h4>
+                                    <span class="text-sm px-3 py-1 rounded-full ${
+                                        rec.priority === 'High' 
+                                            ? 'bg-red-100 text-red-700' 
+                                            : 'bg-yellow-100 text-yellow-700'
+                                    }">${rec.priority} Priority</span>
+                                </div>
+                                <p class="text-text-muted">${rec.description}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Ready to Improve Your Grade?</h3>
+                <p class="text-text-muted mb-8">Let our experts help you implement these improvements and achieve sustainable growth.</p>
+                <a href="/contact.html" class="inline-block px-10 py-4 rounded-md font-semibold cta-button text-lg">
+                    Schedule Your Free Consultation
+                </a>
+            </div>
+        `;
+
+        // Animate metric bars after a short delay
+        setTimeout(() => {
+            selectAll('.metric-fill').forEach((bar, index) => {
+                setTimeout(() => {
+                    bar.style.width = metrics[index].score + '%';
+                }, index * 100);
+            });
+        }, 100);
     }
 });
