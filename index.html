@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeTown | Design & Marketing for Kansas City Businesses</title>
+    <meta name="description" content="HomeTown is a design-forward marketing agency in Kansas City, crafting bespoke brand experiences, websites, and growth strategies for local businesses.">
+    <meta name="keywords" content="Kansas City marketing, small business branding, premium website design KC, local marketing Kansas City, high-end graphic design">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP & ScrollTrigger for polished animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Font: Satoshi -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="text-base md:text-lg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-bg-light/80 backdrop-blur-lg border-b border-border-color">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-wider uppercase nav-link">Hometown</a>
+            <nav class="hidden md:flex space-x-8 items-center text-sm font-medium tracking-wide">
+                <a href="/work.html" class="nav-link">Work</a>
+                <a href="/services.html" class="nav-link">Services</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <a href="/analyzer.html" class="nav-link">Growth Grader</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bg-light text-center">
+            <a href="/work.html" class="block py-4 border-t border-border-color">Work</a>
+            <a href="/services.html" class="block py-4 border-t border-border-color">Services</a>
+            <a href="/about.html" class="block py-4 border-t border-border-color">About</a>
+            <a href="/analyzer.html" class="block py-4 border-t border-border-color">Growth Grader</a>
+            <a href="/contact.html" class="block py-4 border-t border-b border-border-color">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center text-center pt-24 md:pt-0">
+            <div class="container mx-auto px-6">
+                <div class="split-parent">
+                    <h1 id="hero-title" class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter split-child">We Build Brands That <span class="gradient-text">Grow</span>.</h1>
+                </div>
+                <div class="split-parent">
+                    <h2 id="hero-subtitle" class="text-xl md:text-2xl mt-6 text-text-muted max-w-2xl mx-auto split-child">A Kansas City marketing agency dedicated to building clear, effective strategies and beautiful digital experiences for local businesses.</h2>
+                </div>
+                <div class="split-parent">
+                    <a href="/contact.html" id="hero-cta" class="magnetic-button inline-block px-10 py-4 rounded-md font-semibold mt-12 cta-button text-lg split-child">
+                        Start a Project
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <section class="marquee">
+            <div class="marquee-content">
+                <span class="marquee-item">Website Design</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Branding</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Social Media Management</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Paid Ads</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Website Design</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Branding</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Social Media Management</span>
+                <span class="marquee-item">•</span>
+                <span class="marquee-item">Paid Ads</span>
+            </div>
+        </section>
+
+        <!-- Growth Grader CTA Section -->
+        <section class="py-20 md:py-32 bg-bg-alt">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 fade-in">Is Your Business Ready to Grow?</h2>
+                    <p class="text-xl text-text-muted mb-8 fade-in">Get your free personalized Growth Grade in less than 60 seconds. Discover your digital strengths and opportunities with our comprehensive business analysis tool.</p>
+                    <div class="fade-in">
+                        <a href="/analyzer.html" class="inline-block px-12 py-5 rounded-md font-semibold text-lg cta-button">
+                            Get Your Free Growth Grade
+                        </a>
+                    </div>
+                    <div class="mt-12 grid md:grid-cols-3 gap-8 text-left fade-in">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold gradient-text mb-2">60s</div>
+                            <p class="text-text-muted">Quick Analysis</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold gradient-text mb-2">100%</div>
+                            <p class="text-text-muted">Free Forever</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-bold gradient-text mb-2">10+</div>
+                            <p class="text-text-muted">Growth Metrics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section class="py-20 md:py-32 bg-bg-light">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto">
+                    <p class="testimonial-text leading-tight fade-in">"Working with HomeTown felt like a true partnership. They listened, understood our vision, and brought it to life in a way we couldn't have imagined."</p>
+                    <p class="mt-8 text-lg font-semibold tracking-widest text-text-muted uppercase fade-in">- JANE DOE, THE RUSSELL KC</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Services Preview -->
+        <section class="py-20 md:py-32 bg-bg-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">What We Do</h2>
+                    <p class="text-xl text-text-muted">Transform your business with our comprehensive suite of services</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center fade-in">
+                        <div class="text-5xl mb-4">🎨</div>
+                        <h3 class="text-xl font-bold mb-2">Brand Design</h3>
+                        <p class="text-text-muted">Create a memorable identity that resonates with your audience</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-5xl mb-4">💻</div>
+                        <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                        <p class="text-text-muted">Beautiful, high-performance websites that convert visitors into customers</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-5xl mb-4">📱</div>
+                        <h3 class="text-xl font-bold mb-2">Social Media</h3>
+                        <p class="text-text-muted">Build engaged communities and grow your online presence</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-5xl mb-4">📈</div>
+                        <h3 class="text-xl font-bold mb-2">Digital Marketing</h3>
+                        <p class="text-text-muted">Data-driven strategies that deliver measurable results</p>
+                    </div>
+                </div>
+                <div class="text-center mt-12 fade-in">
+                    <a href="/services.html" class="inline-block px-8 py-3 rounded-md font-semibold cta-button">
+                        View All Services
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bg-alt">
+        <div class="container mx-auto px-6 pt-16 pb-8">
+            <div class="grid lg:grid-cols-4 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <h3 class="text-xl font-bold tracking-wider uppercase">Hometown</h3>
+                    <p class="text-sm text-text-muted max-w-sm mt-2">A design-forward marketing agency in Kansas City, dedicated to helping local businesses grow with purpose and clarity.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Navigate</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/work.html" class="text-text-muted hover:text-accent-start">Work</a></li>
+                        <li><a href="/services.html" class="text-text-muted hover:text-accent-start">Services</a></li>
+                        <li><a href="/about.html" class="text-text-muted hover:text-accent-start">About</a></li>
+                        <li><a href="/analyzer.html" class="text-text-muted hover:text-accent-start">Growth Grader</a></li>
+                        <li><a href="/contact.html" class="text-text-muted hover:text-accent-start">Contact</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-text-muted hover:text-accent-start">Instagram</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent-start">LinkedIn</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent-start">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-sm text-text-muted pt-8 border-t border-border-color">
+                <p>&copy; <span id="year"></span> HomeTown Marketing. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

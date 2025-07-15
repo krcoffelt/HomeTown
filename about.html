@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About HomeTown | Kansas City Marketing Agency</title>
+    <meta name="description" content="Learn about HomeTown, a Kansas City marketing agency dedicated to helping local businesses grow through strategic design and digital marketing.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP & ScrollTrigger for polished animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Font: Satoshi -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="text-base md:text-lg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-bg-light/80 backdrop-blur-lg border-b border-border-color">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-wider uppercase nav-link">Hometown</a>
+            <nav class="hidden md:flex space-x-8 items-center text-sm font-medium tracking-wide">
+                <a href="/work.html" class="nav-link">Work</a>
+                <a href="/services.html" class="nav-link">Services</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <a href="/analyzer.html" class="nav-link">Growth Grader</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bg-light text-center">
+            <a href="/work.html" class="block py-4 border-t border-border-color">Work</a>
+            <a href="/services.html" class="block py-4 border-t border-border-color">Services</a>
+            <a href="/about.html" class="block py-4 border-t border-border-color">About</a>
+            <a href="/analyzer.html" class="block py-4 border-t border-border-color">Growth Grader</a>
+            <a href="/contact.html" class="block py-4 border-t border-b border-border-color">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <!-- Page Header -->
+        <section class="py-20 md:py-32 bg-bg-light">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">About HomeTown</h1>
+                <p class="text-xl text-text-muted max-w-3xl mx-auto">We're a Kansas City marketing agency on a mission to help local businesses thrive in the digital age.</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-bg-alt py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+                    <div class="fade-in">
+                        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Rooted in Kansas City. Built for Growth.</h2>
+                        <div class="space-y-6 text-text-muted leading-relaxed">
+                            <p>We are not a faceless national firm. HomeTown was founded in and for Kansas City. Our mission is to elevate the businesses that make our city unique. We understand the local landscape because we are a part of it.</p>
+                            <p>Our approach is personal. We work with a select number of clients to ensure a deep, collaborative partnership. We're here to be your trusted creative and strategic team, invested in your long-term success.</p>
+                        </div>
+                    </div>
+                    <div class="fade-in">
+                        <h4 class="text-2xl font-bold mb-4">Our Philosophy</h4>
+                        <ul class="space-y-4">
+                            <li class="border-t border-border-color pt-4">
+                                <h5 class="font-semibold">Partnership Over Projects</h5>
+                                <p class="text-text-muted">We seek to build lasting relationships, acting as an extension of your team.</p>
+                            </li>
+                            <li class="border-t border-border-color pt-4">
+                                <h5 class="font-semibold">Design as a Business Tool</h5>
+                                <p class="text-text-muted">We create beautiful work that is grounded in strategy and designed to achieve business objectives.</p>
+                            </li>
+                             <li class="border-t border-border-color pt-4">
+                                <h5 class="font-semibold">Local First</h5>
+                                <p class="text-text-muted">Our focus is on strengthening the local economy by helping KC's small businesses thrive.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="text-center mb-16 md:mb-24">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Meet the Team</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Team Member 1 -->
+                    <div class="team-member text-center fade-in">
+                        <div class="relative inline-block mb-4">
+                           <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2787&auto=format&fit=crop" alt="Team member photo" class="w-40 h-40 object-cover team-member-photo">
+                        </div>
+                        <h4 class="text-xl font-bold">Alex Johnson</h4>
+                        <p class="text-text-muted">Founder & Strategist</p>
+                    </div>
+                     <!-- Team Member 2 -->
+                    <div class="team-member text-center fade-in">
+                        <div class="relative inline-block mb-4">
+                           <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=2934&auto=format&fit=crop" alt="Team member photo" class="w-40 h-40 object-cover team-member-photo">
+                        </div>
+                        <h4 class="text-xl font-bold">Maria Garcia</h4>
+                        <p class="text-text-muted">Lead Designer</p>
+                    </div>
+                     <!-- Team Member 3 -->
+                    <div class="team-member text-center fade-in">
+                        <div class="relative inline-block mb-4">
+                           <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2942&auto=format&fit=crop" alt="Team member photo" class="w-40 h-40 rounded-full object-cover team-member-photo">
+                        </div>
+                        <h4 class="text-xl font-bold">David Chen</h4>
+                        <p class="text-text-muted">Marketing Director</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="py-20 md:py-32 bg-bg-light">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-center mb-16">Our Core Values</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center fade-in">
+                        <div class="text-5xl mb-4">🎯</div>
+                        <h3 class="text-2xl font-bold mb-3">Results-Driven</h3>
+                        <p class="text-text-muted">Every decision we make is focused on delivering measurable results for your business.</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-5xl mb-4">🤝</div>
+                        <h3 class="text-2xl font-bold mb-3">Collaborative</h3>
+                        <p class="text-text-muted">We believe the best work comes from true partnership and open communication.</p>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-5xl mb-4">💡</div>
+                        <h3 class="text-2xl font-bold mb-3">Innovative</h3>
+                        <p class="text-text-muted">We stay ahead of trends to ensure your business remains competitive and relevant.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section class="py-20 md:py-32 bg-bg-alt">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-center mb-12">Our Story</h2>
+                    <div class="space-y-6 text-text-muted leading-relaxed fade-in">
+                        <p>HomeTown was born from a simple observation: Kansas City's incredible small businesses deserved better marketing support. Too many local companies were either priced out of quality marketing services or receiving cookie-cutter solutions from agencies that didn't understand the local market.</p>
+                        <p>Founded in 2020, we set out to bridge this gap. We combined big-agency expertise with small-town values, creating a unique approach that delivers premium results at fair prices. Our team brings together decades of experience from national agencies, tech startups, and creative studios.</p>
+                        <p>Today, we're proud to be Kansas City's trusted marketing partner for businesses that are serious about growth. From the Crossroads to Waldo, from Westport to the River Market, we're helping build the brands that make our city special.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 md:py-32 bg-bg-light">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Let's Build Something Great Together</h2>
+                <p class="text-xl text-text-muted mb-8 max-w-2xl mx-auto">Ready to take your business to the next level? We'd love to hear about your goals.</p>
+                <a href="/contact.html" class="inline-block px-10 py-4 rounded-md font-semibold cta-button text-lg">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bg-alt">
+        <div class="container mx-auto px-6 pt-16 pb-8">
+            <div class="grid lg:grid-cols-4 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <h3 class="text-xl font-bold tracking-wider uppercase">Hometown</h3>
+                    <p class="text-sm text-text-muted max-w-sm mt-2">A design-forward marketing agency in Kansas City, dedicated to helping local businesses grow with purpose and clarity.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Navigate</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/work.html" class="text-text-muted hover:text-accent-start">Work</a></li>
+                        <li><a href="/services.html" class="text-text-muted hover:text-accent-start">Services</a></li>
+                        <li><a href="/about.html" class="text-text-muted hover:text-accent-start">About</a></li>
+                        <li><a href="/analyzer.html" class="text-text-muted hover:text-accent-start">Growth Grader</a></li>
+                        <li><a href="/contact.html" class="text-text-muted hover:text-accent-start">Contact</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-text-muted hover:text-accent-start">Instagram</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent-start">LinkedIn</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent-start">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-sm text-text-muted pt-8 border-t border-border-color">
+                <p>&copy; <span id="year"></span> HomeTown Marketing. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

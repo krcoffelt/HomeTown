@@ -1,0 +1,227 @@
+/* ==============================================
+Hometown Marketing Agency - Custom Stylesheet
+==============================================
+*/
+
+/* --- Root Variables --- */
+:root {
+    --bg-light: #F9F9F9;
+    --bg-alt: #FFFFFF;
+    --text-dark: #1D1D1F;
+    --text-muted: #555555;
+    --accent-start: #004643;
+    --accent-end: #00796B;
+    --border-color: #EAEAEA;
+}
+
+/* --- Base & Typography --- */
+html {
+    background-color: var(--bg-light);
+}
+
+body {
+    font-family: 'Satoshi', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 700;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, var(--accent-start), var(--accent-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Navigation --- */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    background: linear-gradient(to right, var(--accent-start), var(--accent-end));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* --- Buttons --- */
+.cta-button {
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, var(--accent-start), var(--accent-end));
+    color: var(--bg-light);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 70, 67, 0.2);
+}
+
+/* --- Animations & Effects --- */
+.split-parent {
+    /* overflow: hidden; */ /* Removed to prevent animation clipping */
+}
+
+.split-child {
+    display: inline-block;
+}
+
+/* --- Components --- */
+.testimonial-text {
+    font-size: 2rem;
+    line-height: 2.75rem;
+    font-weight: 500;
+}
+@media (min-width: 768px) {
+    .testimonial-text {
+        font-size: 2.5rem;
+        line-height: 1.5;
+    }
+}
+
+.bento-grid-item {
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.08);
+}
+
+.work-item-image-wrap {
+    overflow: hidden;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.work-item-image {
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.work-item:hover .work-item-image {
+    transform: scale(1.05);
+}
+
+.work-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.work-item:hover .work-item-overlay {
+    opacity: 1;
+}
+
+.team-member-photo {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+    border-radius: 9999px;
+}
+
+.team-member:hover .team-member-photo {
+    filter: grayscale(0%);
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px; /* Adjust as needed */
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    color: var(--accent-start);
+}
+
+.faq-icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.process-step::before {
+    content: '';
+    position: absolute;
+    left: 1.25rem;
+    top: 1.25rem;
+    bottom: -2.5rem;
+    width: 2px;
+    background-color: var(--border-color);
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.process-step:last-child::before {
+    display: none;
+}
+
+/* Marquee Styles */
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 1.5rem 0;
+    background-color: var(--bg-alt);
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+}
+
+.marquee-item {
+    display: inline-block;
+    margin: 0 2rem;
+    font-weight: 500;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- Growth Grader / Analyzer Styles --- */
+.results-card {
+    background-color: var(--bg-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    margin-top: 2rem;
+    text-align: left;
+}
