@@ -4,11 +4,59 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectAll = (e) => document.querySelectorAll(e);
 
     // --- INITIALIZATION ---
+    initSiteIntro();
     initMobileMenu();
     initFaqAccordion();
     initGrowthGrader();
 
     // --- CORE LOGIC ---
+
+    /**
+     * Site intro animation with text scramble effect
+     */
+    function initSiteIntro() {
+        const siteIntro = select('#site-intro');
+        const introLogo = select('#intro-logo');
+        
+        if (!siteIntro) return;
+        
+        // Text scramble effect
+        function scrambleText(element, finalText, duration = 2000) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            let iterations = 0;
+            const letters = finalText.split('');
+            
+            const interval = setInterval(() => {
+                element.textContent = letters.map((letter, index) => {
+                    if (index < iterations) {
+                        return finalText[index];
+                    }
+                    return chars[Math.floor(Math.random() * chars.length)];
+                }).join('');
+                
+                if (iterations >= finalText.length) {
+                    clearInterval(interval);
+                }
+                
+                iterations += 1/3;
+            }, duration / finalText.length / 3);
+        }
+        
+        // Start the scramble effect after quote animation
+        setTimeout(() => {
+            if (introLogo) {
+                scrambleText(introLogo, 'HOMETOWN', 1500);
+            }
+        }, 2500);
+        
+        // Hide intro after animation completes
+        setTimeout(() => {
+            siteIntro.classList.add('fade-out');
+            setTimeout(() => {
+                siteIntro.style.display = 'none';
+            }, 800);
+        }, 4500);
+    }
 
     /**
      * Sets up the mobile menu toggle functionality.
@@ -210,5 +258,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 </a>
             </div>
         `;
+        
+        // Animate metric bars
+        setTimeout(() => {
+            selectAll('.metric-fill').forEach((bar, index) => {
+                const score = bar.getAttribute('data-score');
+                if (score) {
+                    setTimeout(() => {
+                        bar.style.width = score + '%';
+                    }, index * 100);
+                }
+            });
+        }, 100);
     }
 });
