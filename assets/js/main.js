@@ -12,42 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- CORE LOGIC ---
 
     /**
-     * Site intro animation with text scramble effect
+     * Simple site intro animation
      */
     function initSiteIntro() {
         const siteIntro = select('#site-intro');
-        const introLogo = select('#intro-logo');
         
         if (!siteIntro) return;
-        
-        // Text scramble effect
-        function scrambleText(element, finalText, duration = 2000) {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            let iterations = 0;
-            const letters = finalText.split('');
-            
-            const interval = setInterval(() => {
-                element.textContent = letters.map((letter, index) => {
-                    if (index < iterations) {
-                        return finalText[index];
-                    }
-                    return chars[Math.floor(Math.random() * chars.length)];
-                }).join('');
-                
-                if (iterations >= finalText.length) {
-                    clearInterval(interval);
-                }
-                
-                iterations += 1/3;
-            }, duration / finalText.length / 3);
-        }
-        
-        // Start the scramble effect after quote animation
-        setTimeout(() => {
-            if (introLogo) {
-                scrambleText(introLogo, 'HOMETOWN', 1500);
-            }
-        }, 2500);
         
         // Hide intro after animation completes
         setTimeout(() => {
@@ -55,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 siteIntro.style.display = 'none';
             }, 800);
-        }, 4500);
+        }, 2500);
     }
 
     /**

@@ -234,7 +234,6 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     white-space: nowrap;
     padding: 1.5rem 0;
-    background-color: var(--bg-alt);
 }
 
 .marquee-content {
@@ -374,31 +373,30 @@ h1, h2, h3, h4, h5, h6 {
     padding: 2rem;
 }
 
-.intro-quote {
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    opacity: 0;
-    animation: fadeInUp 1s ease 0.5s forwards;
-}
-
 .intro-logo {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     opacity: 0;
-    animation: textScramble 2s ease 2s forwards;
+    animation: fadeInScale 1.5s ease 0.5s forwards;
 }
 
-@keyframes fadeInUp {
-    from {
+@keyframes fadeInScale {
+    0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: scale(0.8);
     }
-    to {
+    100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-logo {
+        font-size: 2.5rem;
+        letter-spacing: 0.2em;
     }
 }
 
