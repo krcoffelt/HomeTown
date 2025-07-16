@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affordable Pricing | HomeTown Marketing</title>
+    <meta name="description" content="Simple, transparent pricing for Kansas City small businesses. No contracts, no hidden fees. Start growing today.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP & ScrollTrigger for polished animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Font: Satoshi -->
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body class="text-base md:text-lg">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-bg-light/80 backdrop-blur-lg border-b border-border-color">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-wider uppercase nav-link">Hometown</a>
+            <nav class="hidden md:flex space-x-8 items-center text-sm font-medium tracking-wide">
+                <a href="/work.html" class="nav-link">Work</a>
+                <a href="/services.html" class="nav-link">Services</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <a href="/analyzer.html" class="nav-link">Growth Grader</a>
+                <a href="/pricing.html" class="nav-link">Pricing</a>
+                <a href="/contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bg-light text-center">
+            <a href="/work.html" class="block py-4 border-t border-border-color">Work</a>
+            <a href="/services.html" class="block py-4 border-t border-border-color">Services</a>
+            <a href="/about.html" class="block py-4 border-t border-border-color">About</a>
+            <a href="/analyzer.html" class="block py-4 border-t border-border-color">Growth Grader</a>
+            <a href="/pricing.html" class="block py-4 border-t border-border-color">Pricing</a>
+            <a href="/contact.html" class="block py-4 border-t border-b border-border-color">Contact</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <!-- Page Header -->
+        <section class="py-20 md:py-32 bg-bg-light">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">Simple, Honest Pricing</h1>
+                <p class="text-xl text-text-muted max-w-3xl mx-auto">Built for small businesses. No contracts, no setup fees, cancel anytime. Just effective marketing at prices that make sense.</p>
+            </div>
+        </section>
+
+        <!-- Pricing Cards -->
+        <section class="py-20 md:py-32 bg-bg-alt">
+            <div class="container mx-auto px-6">
+                <!-- Monthly Plans -->
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4">Monthly Marketing Plans</h2>
+                    <p class="text-text-muted">Choose the level of support that fits your business</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
+                    <!-- Starter Plan -->
+                    <div class="pricing-card">
+                        <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                        <p class="text-text-muted mb-6">Perfect for businesses just getting started</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$299</span>
+                            <span class="text-text-muted">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Social media management (3 posts/week)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Google My Business optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Monthly performance report</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Email support</span>
+                            </li>
+                        </ul>
+                        <a href="/contact.html" class="block w-full text-center px-6 py-3 border-2 border-accent-start text-accent-start rounded-md font-semibold hover:bg-accent-start hover:text-white transition-colors">
+                            Get Started
+                        </a>
+                    </div>
+
+                    <!-- Growth Plan -->
+                    <div class="pricing-card featured">
+                        <h3 class="text-2xl font-bold mb-2">Growth</h3>
+                        <p class="text-text-muted mb-6">Our most popular plan for growing businesses</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$599</span>
+                            <span class="text-text-muted">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Everything in Starter, plus:</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Social media management (5 posts/week)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Basic website updates</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Email marketing (2 campaigns/month)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Local SEO optimization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Monthly strategy call</span>
+                            </li>
+                        </ul>
+                        <a href="/contact.html" class="block w-full text-center px-6 py-3 cta-button rounded-md font-semibold">
+                            Get Started
+                        </a>
+                    </div>
+
+                    <!-- Premium Plan -->
+                    <div class="pricing-card">
+                        <h3 class="text-2xl font-bold mb-2">Premium</h3>
+                        <p class="text-text-muted mb-6">Full-service marketing partnership</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">$999</span>
+                            <span class="text-text-muted">/month</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Everything in Growth, plus:</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Daily social media management</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Paid ad management ($500 ad spend included)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Content creation (photos/graphics)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Weekly strategy calls</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-start mr-2">✓</span>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        <a href="/contact.html" class="block w-full text-center px-6 py-3 border-2 border-accent-start text-accent-start rounded-md font-semibold hover:bg-accent-start hover:text-white transition-colors">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+
+                <!-- One-Time Services -->
+                <div class="bg-bg-light rounded-lg p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-center mb-12">One-Time Services</h2>
+                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                        <div class="bg-white p-6 rounded-lg border border-border-color">
+                            <h3 class="text-xl font-bold mb-3">Quick Start Package</h3>
+                            <p class="text-3xl font-bold mb-3">$499</p>
+                            <p class="text-text-muted mb-4">Get your marketing foundation set up right</p>
+                            <ul class="space-y-2 text-sm">
+                                <li>• Google My Business setup & optimization</li>
+                                <li>• Social media profile creation/optimization</li>
+                                <li>• Basic brand guidelines</li>
+                                <li>• 30-minute strategy session</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg border border-border-color">
+                            <h3 class="text-xl font-bold mb-3">Website Starter</h3>
+                            <p class="text-3xl font-bold mb-3">$1,999</p>
+                            <p class="text-text-muted mb-4">Professional 5-page website to get you online</p>
+                            <ul class="space-y-2 text-sm">
+                                <li>• Mobile-responsive design</li>
+                                <li>• Basic SEO setup</li>
+                                <li>• Contact forms & Google Maps</li>
+                                <li>• 30 days of free updates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Pricing -->
+        <section class="py-20 md:py-32 bg-bg-light">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Need Something Different?</h2>
+                    <p class="text-xl text-text-muted mb-8">Every business is unique. Let's create a custom package that fits your specific needs and budget.</p>
+                    <a href="/contact.html" class="inline-block px-10 py-4 rounded-md font-semibold cta-button text-lg">
+                        Let's Talk
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-20 md:py-32 bg-bg-alt">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Pricing FAQs</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-lg">
+                            <h3 class="font-bold mb-2">Are there any setup fees or contracts?</h3>
+                            <p class="text-text-muted">No setup fees, no contracts. All plans are month-to-month and you can cancel anytime.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg">
+                            <h3 class="font-bold mb-2">Can I change plans later?</h3>
+                            <p class="text-text-muted">Absolutely! You can upgrade or downgrade your plan at any time. Changes take effect at your next billing cycle.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg">
+                            <h3 class="font-bold mb-2">What if I need services not listed here?</h3>
+                            <p class="text-text-muted">We're flexible! Contact us to discuss custom solutions. We can create a package that includes exactly what you need.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg">
+                            <h3 class="font-bold mb-2">Do you offer discounts for paying annually?</h3>
+                            <p class="text-text-muted">Yes! Pay for 12 months upfront and get 2 months free on any monthly plan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bg-alt">
+        <div class="container mx-auto px-6 pt-16 pb-8">
+            <div class="grid lg:grid-cols-4 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <h3 class="text-xl font-bold tracking-wider uppercase">Hometown</h3>
+                    <p class="text-sm text-text-muted max-w-sm mt-2">A design-forward marketing agency in Kansas City, dedicated to helping local businesses grow with purpose and clarity.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Navigate</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/work.html" class="text-text-muted hover:text-accent-start">Work</a></li>
+                        <li><a href="/services.html" class="text-text-muted hover:text-accent-start">Services</a></li>
+                        <li><a href="/about.html" class="text-text-muted hover:text-accent-start">About</a></li>
+                        <li><a href="/analyzer.html" class="text-text-muted hover:text-accent-start">Growth Grader</a></li>
+                        <li><a href="/pricing.html" class="text-text-muted hover:text-accent-start">Pricing</a></li>
+                        <li><a href="/contact.html" class="text-text-muted hover:text-accent-start">Contact</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-text-muted hover:text-accent-start">Instagram</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent-start">LinkedIn</a></li>
+                        <li><a href="#" class="text-text-muted hover:text-accent-start">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center text-sm text-text-muted pt-8 border-t border-border-color">
+                <p>&copy; <span id="year"></span> HomeTown Marketing. All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
