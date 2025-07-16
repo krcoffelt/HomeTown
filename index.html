@@ -9,6 +9,23 @@
 
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                'bg-light': '#F9F9F9',
+                'bg-alt': '#FFFFFF',
+                'text-dark': '#1D1D1F',
+                'text-muted': '#555555',
+                'accent-start': '#004643',
+                'accent-end': '#00796B',
+                'border-color': '#EAEAEA'
+            }
+        }
+    }
+}
+</script>
 
 
 <!-- Font: Satoshi -->
@@ -18,13 +35,6 @@
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body class="text-base md:text-lg">
-
-<!-- Site Intro Animation -->
-<div class="site-intro" id="site-intro">
-    <div class="intro-content">
-        <div class="intro-logo" id="intro-logo">HOMETOWN</div>
-    </div>
-</div>
 
 <!-- Header -->
 <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-bg-light/80 backdrop-blur-lg border-b border-border-color">

@@ -4,29 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectAll = (e) => document.querySelectorAll(e);
 
     // --- INITIALIZATION ---
-    initSiteIntro();
     initMobileMenu();
     initFaqAccordion();
     initGrowthGrader();
 
     // --- CORE LOGIC ---
-
-    /**
-     * Simple site intro animation
-     */
-    function initSiteIntro() {
-        const siteIntro = select('#site-intro');
-        
-        if (!siteIntro) return;
-        
-        // Hide intro after animation completes
-        setTimeout(() => {
-            siteIntro.classList.add('fade-out');
-            setTimeout(() => {
-                siteIntro.style.display = 'none';
-            }, 800);
-        }, 2500);
-    }
 
     /**
      * Sets up the mobile menu toggle functionality.
