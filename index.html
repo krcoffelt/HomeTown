@@ -64,7 +64,7 @@ tailwind.config = {
 <!-- Main Content -->
 <main>
 <!-- Hero Section -->
-<section class="min-h-screen flex items-center justify-center text-center pt-24 md:pt-0 bg-bg-light">
+<section class="min-h-[80vh] flex items-center justify-center text-center pt-24 md:pt-0 bg-bg-light">
 <div class="container mx-auto px-6">
     <div class="split-parent">
         <h1 id="hero-title" class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter split-child">We Build Brands That <span class="gradient-text">Grow</span>.</h1>
@@ -102,22 +102,12 @@ tailwind.config = {
 </section>
 
 
-<!-- Testimonial Section -->
-<section class="py-20 md:py-32 bg-gradient-to-r from-accent-start to-accent-end text-white relative overflow-hidden">
-<div class="container mx-auto px-6 text-center">
-    <div class="max-w-4xl mx-auto">
-        <p class="testimonial-text leading-tight fade-in text-white">"Working with HomeTown felt like a true partnership. They listened, understood our vision, and brought it to life in a way we couldn't have imagined."</p>
-        <p class="mt-8 text-lg font-semibold tracking-widest text-gray-200 uppercase fade-in">- JANE DOE, THE RUSSELL KC</p>
-    </div>
-</div>
-</section>
-
 <!-- Quick Services Preview -->
-<section class="py-20 md:py-32 bg-bg-light">
+<section class="py-20 md:py-32 bg-gradient-to-r from-accent-start to-accent-end text-white relative overflow-hidden">
 <div class="container mx-auto px-6">
     <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 reveal-text text-text-dark">What We Do</h2>
-        <p class="text-xl text-text-dark">Transform your business with our comprehensive suite of services</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 reveal-text text-white">What We Do</h2>
+        <p class="text-xl text-white">Transform your business with our comprehensive suite of services</p>
     </div>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-children">
         <div class="text-center fade-in hover-lift spotlight-card bg-white p-6 rounded-lg">
@@ -150,9 +140,19 @@ tailwind.config = {
         </div>
     </div>
     <div class="text-center mt-12 fade-in">
-        <a href="/services.html" class="inline-block px-8 py-3 rounded-md font-semibold bg-accent-start text-white hover:bg-accent-end transition-colors">
+        <a href="/services.html" class="inline-block px-8 py-3 rounded-md font-semibold bg-white text-accent-start hover:bg-gray-100 transition-colors">
             View All Services
         </a>
+    </div>
+</div>
+</section>
+
+<!-- Testimonial Section -->
+<section class="py-20 md:py-32 bg-bg-light">
+<div class="container mx-auto px-6 text-center">
+    <div class="max-w-4xl mx-auto">
+        <p class="testimonial-text leading-tight fade-in text-text-dark">"Working with HomeTown felt like a true partnership. They listened, understood our vision, and brought it to life in a way we couldn't have imagined."</p>
+        <p class="mt-8 text-lg font-semibold tracking-widest text-text-muted uppercase fade-in">- JANE DOE, THE RUSSELL KC</p>
     </div>
 </div>
 </section>
