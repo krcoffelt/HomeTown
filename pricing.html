@@ -53,6 +53,371 @@
             </div>
         </section>
 
+        <!-- Interactive Pricing Calculator -->
+        <section class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Build Your Custom Package</h2>
+                    <p class="text-xl text-text-muted max-w-3xl mx-auto">Mix and match services to create the perfect marketing solution for your business</p>
+                </div>
+
+                <!-- Calculator Interface -->
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <!-- Service Selection -->
+                        <div class="lg:col-span-2">
+                            <div class="bg-bg-light rounded-lg shadow-xl p-8">
+                                <!-- Billing Toggle -->
+                                <div class="flex justify-center mb-8">
+                                    <div class="billing-toggle">
+                                        <button class="billing-option active" data-billing="monthly">
+                                            Monthly
+                                        </button>
+                                        <button class="billing-option" data-billing="annual">
+                                            Annual
+                                            <span class="discount-badge">Save 2 months</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Service Categories -->
+                                <div class="space-y-8">
+                                    <!-- Social Media Services -->
+                                    <div class="service-category">
+                                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                                            <span class="category-icon">📱</span>
+                                            Social Media Management
+                                        </h3>
+                                        <div class="service-options grid md:grid-cols-2 gap-4">
+                                            <label class="service-option">
+                                                <input type="radio" name="social_media" value="none" class="sr-only" checked>
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">None</h4>
+                                                        <span class="price" data-monthly="0" data-annual="0">$0/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Handle it yourself</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="social_media" value="basic" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Basic</h4>
+                                                        <span class="price" data-monthly="299" data-annual="2690">$299/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">3 posts per week, content planning</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="social_media" value="advanced" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Advanced</h4>
+                                                        <span class="price" data-monthly="499" data-annual="4490">$499/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">5 posts per week, stories, engagement</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="social_media" value="premium" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Premium</h4>
+                                                        <span class="price" data-monthly="799" data-annual="7190">$799/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Daily posting, ads management, analytics</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Website Services -->
+                                    <div class="service-category">
+                                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                                            <span class="category-icon">🌐</span>
+                                            Website & SEO
+                                        </h3>
+                                        <div class="service-options grid md:grid-cols-2 gap-4">
+                                            <label class="service-option">
+                                                <input type="radio" name="website" value="none" class="sr-only" checked>
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">None</h4>
+                                                        <span class="price" data-monthly="0" data-annual="0">$0/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Current website is fine</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="website" value="maintenance" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Maintenance</h4>
+                                                        <span class="price" data-monthly="199" data-annual="1790">$199/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Updates, backups, basic SEO</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="website" value="optimization" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Optimization</h4>
+                                                        <span class="price" data-monthly="399" data-annual="3590">$399/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">SEO, performance, content updates</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="website" value="redesign" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Full Redesign</h4>
+                                                        <span class="price" data-monthly="799" data-annual="7190">$799/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Complete rebuild, modern design</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Content Marketing -->
+                                    <div class="service-category">
+                                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                                            <span class="category-icon">✍️</span>
+                                            Content & Email Marketing
+                                        </h3>
+                                        <div class="service-options grid md:grid-cols-2 gap-4">
+                                            <label class="service-option">
+                                                <input type="radio" name="content" value="none" class="sr-only" checked>
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">None</h4>
+                                                        <span class="price" data-monthly="0" data-annual="0">$0/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">No additional content needed</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="content" value="basic" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Email Marketing</h4>
+                                                        <span class="price" data-monthly="199" data-annual="1790">$199/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">2 campaigns per month</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="content" value="blog" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Blog + Email</h4>
+                                                        <span class="price" data-monthly="399" data-annual="3590">$399/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">2 blog posts + email campaigns</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="content" value="full" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Full Content</h4>
+                                                        <span class="price" data-monthly="599" data-annual="5390">$599/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Blog, email, graphics, videos</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Paid Advertising -->
+                                    <div class="service-category">
+                                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                                            <span class="category-icon">🎯</span>
+                                            Paid Advertising
+                                        </h3>
+                                        <div class="service-options grid md:grid-cols-2 gap-4">
+                                            <label class="service-option">
+                                                <input type="radio" name="advertising" value="none" class="sr-only" checked>
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">None</h4>
+                                                        <span class="price" data-monthly="0" data-annual="0">$0/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Organic growth only</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="advertising" value="google" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Google Ads</h4>
+                                                        <span class="price" data-monthly="299" data-annual="2690">$299/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Search ads management</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="advertising" value="social" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Social Ads</h4>
+                                                        <span class="price" data-monthly="399" data-annual="3590">$399/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Facebook & Instagram ads</p>
+                                                </div>
+                                            </label>
+                                            <label class="service-option">
+                                                <input type="radio" name="advertising" value="full" class="sr-only">
+                                                <div class="option-card">
+                                                    <div class="option-header">
+                                                        <h4 class="font-semibold">Full Campaign</h4>
+                                                        <span class="price" data-monthly="699" data-annual="6290">$699/mo</span>
+                                                    </div>
+                                                    <p class="text-sm text-text-muted">Google + Social + Display ads</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Add-on Services -->
+                                    <div class="service-category">
+                                        <h3 class="text-xl font-bold mb-4 flex items-center">
+                                            <span class="category-icon">🎁</span>
+                                            Add-on Services
+                                        </h3>
+                                        <div class="addon-services space-y-4">
+                                            <label class="addon-option">
+                                                <input type="checkbox" name="photography" value="photography" class="addon-checkbox">
+                                                <div class="addon-card">
+                                                    <div class="addon-info">
+                                                        <h4 class="font-semibold">Professional Photography</h4>
+                                                        <p class="text-sm text-text-muted">Monthly photo shoot</p>
+                                                    </div>
+                                                    <span class="addon-price" data-monthly="199" data-annual="1790">+$199/mo</span>
+                                                </div>
+                                            </label>
+                                            <label class="addon-option">
+                                                <input type="checkbox" name="video" value="video" class="addon-checkbox">
+                                                <div class="addon-card">
+                                                    <div class="addon-info">
+                                                        <h4 class="font-semibold">Video Content</h4>
+                                                        <p class="text-sm text-text-muted">2 videos per month</p>
+                                                    </div>
+                                                    <span class="addon-price" data-monthly="399" data-annual="3590">+$399/mo</span>
+                                                </div>
+                                            </label>
+                                            <label class="addon-option">
+                                                <input type="checkbox" name="analytics" value="analytics" class="addon-checkbox">
+                                                <div class="addon-card">
+                                                    <div class="addon-info">
+                                                        <h4 class="font-semibold">Advanced Analytics</h4>
+                                                        <p class="text-sm text-text-muted">Custom dashboards & reports</p>
+                                                    </div>
+                                                    <span class="addon-price" data-monthly="99" data-annual="890">+$99/mo</span>
+                                                </div>
+                                            </label>
+                                            <label class="addon-option">
+                                                <input type="checkbox" name="consulting" value="consulting" class="addon-checkbox">
+                                                <div class="addon-card">
+                                                    <div class="addon-info">
+                                                        <h4 class="font-semibold">Strategic Consulting</h4>
+                                                        <p class="text-sm text-text-muted">Weekly strategy calls</p>
+                                                    </div>
+                                                    <span class="addon-price" data-monthly="299" data-annual="2690">+$299/mo</span>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Price Summary -->
+                        <div class="lg:col-span-1">
+                            <div class="pricing-summary sticky top-32">
+                                <div class="bg-gradient-to-br from-accent-start to-accent-end text-white rounded-lg p-8">
+                                    <h3 class="text-2xl font-bold mb-6">Your Custom Package</h3>
+                                    
+                                    <!-- Selected Services -->
+                                    <div class="selected-services mb-6">
+                                        <div class="service-line" id="social-media-line" style="display: none;">
+                                            <span class="service-name">Social Media</span>
+                                            <span class="service-price">$0</span>
+                                        </div>
+                                        <div class="service-line" id="website-line" style="display: none;">
+                                            <span class="service-name">Website & SEO</span>
+                                            <span class="service-price">$0</span>
+                                        </div>
+                                        <div class="service-line" id="content-line" style="display: none;">
+                                            <span class="service-name">Content Marketing</span>
+                                            <span class="service-price">$0</span>
+                                        </div>
+                                        <div class="service-line" id="advertising-line" style="display: none;">
+                                            <span class="service-name">Paid Advertising</span>
+                                            <span class="service-price">$0</span>
+                                        </div>
+                                        <div id="addon-lines"></div>
+                                    </div>
+                                    
+                                    <!-- Total -->
+                                    <div class="pricing-total">
+                                        <div class="total-line">
+                                            <span class="text-lg">Subtotal</span>
+                                            <span class="text-lg" id="subtotal">$0</span>
+                                        </div>
+                                        <div class="total-line discount-line" id="discount-line" style="display: none;">
+                                            <span class="text-sm opacity-90">Annual Discount</span>
+                                            <span class="text-sm" id="discount-amount">-$0</span>
+                                        </div>
+                                        <div class="total-line final">
+                                            <span class="text-2xl font-bold">Total</span>
+                                            <span class="text-2xl font-bold" id="total-price">$0<span class="text-lg">/mo</span></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- ROI Calculator -->
+                                    <div class="roi-section mt-8 pt-6 border-t border-white/20">
+                                        <h4 class="font-bold mb-4">Expected ROI</h4>
+                                        <div class="roi-input mb-4">
+                                            <label class="block text-sm mb-2">Current Monthly Revenue</label>
+                                            <input type="number" id="current-revenue" placeholder="Enter amount" class="w-full p-3 rounded-lg text-gray-900" value="10000">
+                                        </div>
+                                        <div class="roi-results">
+                                            <div class="roi-line">
+                                                <span class="text-sm">Expected Growth</span>
+                                                <span class="text-sm font-semibold" id="growth-percentage">25%</span>
+                                            </div>
+                                            <div class="roi-line">
+                                                <span class="text-sm">Additional Revenue</span>
+                                                <span class="text-sm font-semibold" id="additional-revenue">$2,500/mo</span>
+                                            </div>
+                                            <div class="roi-line">
+                                                <span class="font-semibold">ROI</span>
+                                                <span class="font-bold text-xl" id="roi-percentage">+∞%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Action Buttons -->
+                                    <div class="action-buttons mt-8 space-y-4">
+                                        <button class="w-full bg-white text-accent-start font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors" onclick="getCustomQuote()">
+                                            Get Custom Quote
+                                        </button>
+                                        <button class="w-full border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-accent-start transition-colors" onclick="scheduleConsultation()">
+                                            Schedule Consultation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Pricing Cards -->
         <section class="py-20 md:py-32 bg-bg-alt">
             <div class="container mx-auto px-6">

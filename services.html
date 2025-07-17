@@ -6,6 +6,12 @@
     <title>Our Services | HomeTown Marketing</title>
     <meta name="description" content="Discover our comprehensive suite of marketing services including web design, branding, social media management, and paid advertising for Kansas City businesses.">
     
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.tailwindcss.com; font-src 'self' https://api.fontshare.com; img-src 'self' https: data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -58,80 +64,313 @@
             <div class="container mx-auto px-6">
                  <div class="text-center mb-16 md:mb-24">
                     <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Our Capabilities</h2>
+                    <p class="text-xl text-text-muted mt-4 mb-8">Compare our services to find the perfect fit for your business</p>
+                    
+                    <!-- Service Comparison Controls -->
+                    <div class="service-comparison-controls mt-8">
+                        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                            <button id="toggle-comparison" class="comparison-toggle-btn">
+                                <svg class="compare-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 12l2 2 4-4"></path>
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                </svg>
+                                <span>Compare Services</span>
+                            </button>
+                            
+                            <!-- Filter Controls -->
+                            <div class="service-filters">
+                                <select id="service-filter" class="filter-select">
+                                    <option value="all">All Services</option>
+                                    <option value="design">Design & Development</option>
+                                    <option value="marketing">Marketing & Strategy</option>
+                                    <option value="content">Content & Media</option>
+                                </select>
+                                
+                                <select id="price-filter" class="filter-select">
+                                    <option value="all">All Prices</option>
+                                    <option value="low">Under $500</option>
+                                    <option value="medium">$500 - $1,500</option>
+                                    <option value="high">$1,500+</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Comparison Counter -->
+                        <div class="comparison-counter hidden" id="comparison-counter">
+                            <span class="counter-text">Select services to compare (0/3)</span>
+                            <button class="compare-selected-btn" id="compare-selected" disabled>
+                                Compare Selected
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6" id="bento-grid">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6" id="bento-grid" role="grid" aria-label="Services grid showcasing our marketing capabilities">
                     <!-- Large Featured Item -->
-                    <div class="bento-grid-item md:col-span-2 md:row-span-2 bg-gradient-to-br from-accent-start to-accent-end text-white p-8 relative overflow-hidden">
+                    <div class="bento-grid-item service-card md:col-span-2 md:row-span-2 bg-gradient-to-br from-accent-start to-accent-end text-white p-8 relative overflow-hidden" 
+                         role="gridcell" 
+                         aria-label="Featured service: Website Design & Development"
+                         data-service-id="web-design"
+                         data-category="design"
+                         data-price="1299"
+                         data-type="one-time"
+                         data-timeline="4-8 weeks">
+                        
+                        <!-- Comparison Checkbox -->
+                        <div class="service-comparison-checkbox hidden">
+                            <input type="checkbox" class="comparison-checkbox" id="compare-web-design" data-service="web-design">
+                            <label for="compare-web-design" class="checkbox-label">
+                                <svg class="checkmark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                            </label>
+                        </div>
+                        
                         <div class="relative z-10">
                             <h3 class="text-3xl font-bold mb-4">Website Design & Development</h3>
                             <p class="text-gray-100 mb-6">Bespoke, high-performance websites that serve as the digital flagship for your brand. We build sites that are not only beautiful but are engineered for conversion and growth.</p>
-                            <div class="inline-flex items-center text-sm font-semibold">
-                                <span class="mr-2">Starting at $1,299</span>
-                                <span>→</span>
+                            <div class="service-details mb-4">
+                                <div class="detail-item">
+                                    <span class="detail-label">Starting at:</span>
+                                    <span class="detail-value">$1,299</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Timeline:</span>
+                                    <span class="detail-value">4-8 weeks</span>
+                                </div>
                             </div>
+                            <div class="service-features mb-6">
+                                <span class="feature-tag">Custom Design</span>
+                                <span class="feature-tag">Responsive</span>
+                                <span class="feature-tag">SEO Optimized</span>
+                                <span class="feature-tag">Performance Tuned</span>
+                            </div>
+                            <button class="service-details-btn" data-service="web-design">
+                                <span>View Details</span>
+                                <span>→</span>
+                            </button>
                         </div>
                     </div>
                     
                     <!-- Brand Identity -->
-                    <div class="bento-grid-item bg-emerald-50 border-2 border-emerald-100 p-6 hover:shadow-lg transition-shadow">
-                        <div class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full mb-4 flex items-center justify-center">
+                    <div class="bento-grid-item service-card bg-emerald-50 border-2 border-emerald-100 p-6 hover:shadow-lg transition-shadow" 
+                         role="gridcell" 
+                         aria-label="Service: Brand Identity Design"
+                         data-service-id="brand-identity"
+                         data-category="design"
+                         data-price="599"
+                         data-type="one-time"
+                         data-timeline="2-4 weeks">
+                        
+                        <!-- Comparison Checkbox -->
+                        <div class="service-comparison-checkbox hidden">
+                            <input type="checkbox" class="comparison-checkbox" id="compare-brand-identity" data-service="brand-identity">
+                            <label for="compare-brand-identity" class="checkbox-label">
+                                <svg class="checkmark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                            </label>
+                        </div>
+                        
+                        <div class="w-12 h-12 bg-gradient-to-r from-emerald-400 to-teal-500 rounded-full mb-4 flex items-center justify-center" aria-hidden="true">
                             <div class="w-6 h-6 bg-white rounded-full"></div>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-emerald-800">Brand Identity</h3>
                         <p class="text-emerald-700 text-sm mb-4">Memorable logos and brand systems that define your business.</p>
-                        <div class="text-xs text-emerald-600 font-semibold">From $599</div>
+                        <div class="service-details mb-4">
+                            <div class="detail-item-small">
+                                <span class="text-xs text-emerald-600 font-semibold">From $599</span>
+                            </div>
+                            <div class="detail-item-small">
+                                <span class="text-xs text-emerald-600">2-4 weeks</span>
+                            </div>
+                        </div>
+                        <div class="service-features mb-4">
+                            <span class="feature-tag-small">Logo Design</span>
+                            <span class="feature-tag-small">Brand Guidelines</span>
+                        </div>
+                        <button class="service-details-btn-small" data-service="brand-identity">
+                            Details →
+                        </button>
                     </div>
                     
                     <!-- Social Media Management -->
-                    <div class="bento-grid-item bg-teal-50 border-2 border-teal-100 p-6 hover:shadow-lg transition-shadow">
-                        <div class="w-12 h-12 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-full mb-4 flex items-center justify-center">
+                    <div class="bento-grid-item service-card bg-teal-50 border-2 border-teal-100 p-6 hover:shadow-lg transition-shadow" 
+                         role="gridcell" 
+                         aria-label="Service: Social Media Management"
+                         data-service-id="social-media"
+                         data-category="marketing"
+                         data-price="149"
+                         data-type="monthly"
+                         data-timeline="Ongoing">
+                        
+                        <!-- Comparison Checkbox -->
+                        <div class="service-comparison-checkbox hidden">
+                            <input type="checkbox" class="comparison-checkbox" id="compare-social-media" data-service="social-media">
+                            <label for="compare-social-media" class="checkbox-label">
+                                <svg class="checkmark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                            </label>
+                        </div>
+                        
+                        <div class="w-12 h-12 bg-gradient-to-r from-teal-400 to-cyan-500 rounded-full mb-4 flex items-center justify-center" aria-hidden="true">
                             <div class="w-6 h-6 bg-white rounded-full"></div>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-teal-800">Social Media</h3>
                         <p class="text-teal-700 text-sm mb-4">Build engaged communities and grow your online presence.</p>
-                        <div class="text-xs text-teal-600 font-semibold">From $149/mo</div>
+                        <div class="service-details mb-4">
+                            <div class="detail-item-small">
+                                <span class="text-xs text-teal-600 font-semibold">From $149/mo</span>
+                            </div>
+                            <div class="detail-item-small">
+                                <span class="text-xs text-teal-600">Ongoing</span>
+                            </div>
+                        </div>
+                        <div class="service-features mb-4">
+                            <span class="feature-tag-small">Content Planning</span>
+                            <span class="feature-tag-small">Community Mgmt</span>
+                        </div>
+                        <button class="service-details-btn-small" data-service="social-media">
+                            Details →
+                        </button>
                     </div>
                     
                     <!-- Content Creation -->
-                    <div class="bento-grid-item md:col-span-2 bg-green-50 border-2 border-green-100 p-6 hover:shadow-lg transition-shadow">
+                    <div class="bento-grid-item service-card md:col-span-2 bg-green-50 border-2 border-green-100 p-6 hover:shadow-lg transition-shadow" 
+                         role="gridcell" 
+                         aria-label="Service: Content Creation including photography, video, and copywriting"
+                         data-service-id="content-creation"
+                         data-category="content"
+                         data-price="299"
+                         data-type="project"
+                         data-timeline="1-3 weeks">
+                        
+                        <!-- Comparison Checkbox -->
+                        <div class="service-comparison-checkbox hidden">
+                            <input type="checkbox" class="comparison-checkbox" id="compare-content-creation" data-service="content-creation">
+                            <label for="compare-content-creation" class="checkbox-label">
+                                <svg class="checkmark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                            </label>
+                        </div>
+                        
                         <div class="flex items-start justify-between">
                             <div class="flex-1">
                                 <h3 class="text-2xl font-bold mb-3 text-green-800">Content Creation</h3>
                                 <p class="text-green-700 mb-4">Professional photography, videography, and copywriting that tells your story.</p>
-                                <div class="flex flex-wrap gap-2">
+                                <div class="service-details mb-4">
+                                    <div class="detail-item">
+                                        <span class="detail-label">Starting at:</span>
+                                        <span class="detail-value">$299/project</span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Timeline:</span>
+                                        <span class="detail-value">1-3 weeks</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-4">
                                     <span class="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Photography</span>
                                     <span class="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Video</span>
                                     <span class="px-3 py-1 bg-green-100 text-green-700 text-xs rounded-full">Copywriting</span>
                                 </div>
+                                <button class="service-details-btn" data-service="content-creation">
+                                    <span>View Details</span>
+                                    <span>→</span>
+                                </button>
                             </div>
-                            <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full ml-4 flex items-center justify-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full ml-4 flex items-center justify-center" aria-hidden="true">
                                 <div class="w-8 h-8 bg-white rounded-full"></div>
                             </div>
                         </div>
                     </div>
                     
                     <!-- SEO & Digital Marketing -->
-                    <div class="bento-grid-item bg-green-100 border-2 border-green-200 p-6 hover:shadow-lg transition-shadow">
-                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full mb-4 flex items-center justify-center">
+                    <div class="bento-grid-item service-card bg-green-100 border-2 border-green-200 p-6 hover:shadow-lg transition-shadow" 
+                         role="gridcell" 
+                         aria-label="Service: SEO & Digital Marketing"
+                         data-service-id="seo-marketing"
+                         data-category="marketing"
+                         data-price="299"
+                         data-type="monthly"
+                         data-timeline="3-6 months">
+                        
+                        <!-- Comparison Checkbox -->
+                        <div class="service-comparison-checkbox hidden">
+                            <input type="checkbox" class="comparison-checkbox" id="compare-seo-marketing" data-service="seo-marketing">
+                            <label for="compare-seo-marketing" class="checkbox-label">
+                                <svg class="checkmark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                            </label>
+                        </div>
+                        
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full mb-4 flex items-center justify-center" aria-hidden="true">
                             <div class="w-6 h-6 bg-white rounded-full"></div>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-green-800">SEO & Digital Marketing</h3>
                         <p class="text-green-700 text-sm mb-4">Get found online and convert visitors into customers.</p>
-                        <div class="text-xs text-green-600 font-semibold">From $299/mo</div>
+                        <div class="service-details mb-4">
+                            <div class="detail-item-small">
+                                <span class="text-xs text-green-600 font-semibold">From $299/mo</span>
+                            </div>
+                            <div class="detail-item-small">
+                                <span class="text-xs text-green-600">3-6 months</span>
+                            </div>
+                        </div>
+                        <div class="service-features mb-4">
+                            <span class="feature-tag-small">SEO Optimization</span>
+                            <span class="feature-tag-small">Paid Ads</span>
+                        </div>
+                        <button class="service-details-btn-small" data-service="seo-marketing">
+                            Details →
+                        </button>
                     </div>
                     
                     <!-- Email Marketing -->
-                    <div class="bento-grid-item bg-teal-100 border-2 border-teal-200 p-6 hover:shadow-lg transition-shadow">
-                        <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full mb-4 flex items-center justify-center">
+                    <div class="bento-grid-item service-card bg-teal-100 border-2 border-teal-200 p-6 hover:shadow-lg transition-shadow" 
+                         role="gridcell" 
+                         aria-label="Service: Email Marketing campaigns and automation"
+                         data-service-id="email-marketing"
+                         data-category="marketing"
+                         data-price="99"
+                         data-type="monthly"
+                         data-timeline="Ongoing">
+                        
+                        <!-- Comparison Checkbox -->
+                        <div class="service-comparison-checkbox hidden">
+                            <input type="checkbox" class="comparison-checkbox" id="compare-email-marketing" data-service="email-marketing">
+                            <label for="compare-email-marketing" class="checkbox-label">
+                                <svg class="checkmark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20,6 9,17 4,12"></polyline>
+                                </svg>
+                            </label>
+                        </div>
+                        
+                        <div class="w-12 h-12 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full mb-4 flex items-center justify-center" aria-hidden="true">
                             <div class="w-6 h-6 bg-white rounded-full"></div>
                         </div>
                         <h3 class="text-xl font-bold mb-3 text-teal-800">Email Marketing</h3>
                         <p class="text-teal-700 text-sm mb-4">Nurture leads and retain customers with targeted campaigns.</p>
-                        <div class="text-xs text-teal-600 font-semibold">From $99/mo</div>
+                        <div class="service-details mb-4">
+                            <div class="detail-item-small">
+                                <span class="text-xs text-teal-600 font-semibold">From $99/mo</span>
+                            </div>
+                            <div class="detail-item-small">
+                                <span class="text-xs text-teal-600">Ongoing</span>
+                            </div>
+                        </div>
+                        <div class="service-features mb-4">
+                            <span class="feature-tag-small">Automation</span>
+                            <span class="feature-tag-small">Analytics</span>
+                        </div>
+                        <button class="service-details-btn-small" data-service="email-marketing">
+                            Details →
+                        </button>
                     </div>
                     
                     <!-- CTA Item -->
-                    <div class="bento-grid-item md:col-span-2 bg-gradient-to-r from-accent-start to-accent-end text-white p-8 relative overflow-hidden">
+                    <div class="bento-grid-item md:col-span-2 bg-gradient-to-r from-accent-start to-accent-end text-white p-8 relative overflow-hidden" role="gridcell" aria-label="Call to action: Ready to grow your business?">
                         <div class="relative z-10">
                             <h3 class="text-2xl font-bold mb-3">Ready to Grow Your Business?</h3>
                             <p class="text-emerald-50 mb-6">Let's discuss how we can help your business reach new heights with our comprehensive marketing services.</p>
@@ -148,6 +387,62 @@
                 </div>
             </div>
         </section>
+
+        <!-- Service Comparison Modal -->
+        <div class="comparison-modal" id="comparison-modal">
+            <div class="comparison-modal-content">
+                <div class="comparison-modal-header">
+                    <h3 class="comparison-modal-title">Service Comparison</h3>
+                    <button class="comparison-modal-close" id="close-comparison-modal" aria-label="Close comparison">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="comparison-modal-body" id="comparison-modal-body">
+                    <!-- Comparison content will be populated by JavaScript -->
+                </div>
+                
+                <div class="comparison-modal-footer">
+                    <button class="clear-comparison-btn" id="clear-comparison">
+                        Clear All
+                    </button>
+                    <button class="contact-about-services-btn">
+                        <a href="/contact.html">Get Quote for Selected Services</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Detail Modal -->
+        <div class="service-detail-modal" id="service-detail-modal">
+            <div class="service-detail-modal-content">
+                <div class="service-detail-modal-header">
+                    <h3 class="service-detail-modal-title" id="service-detail-title">Service Details</h3>
+                    <button class="service-detail-modal-close" id="close-service-detail-modal" aria-label="Close service details">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="service-detail-modal-body" id="service-detail-modal-body">
+                    <!-- Service detail content will be populated by JavaScript -->
+                </div>
+                
+                <div class="service-detail-modal-footer">
+                    <button class="add-to-comparison-btn" id="add-to-comparison-btn">
+                        Add to Comparison
+                    </button>
+                    <button class="get-quote-btn">
+                        <a href="/contact.html">Get Quote</a>
+                    </button>
+                </div>
+            </div>
+        </div>
 
         <!-- Additional Services Detail -->
         <section class="py-20 md:py-32 bg-bg-light">

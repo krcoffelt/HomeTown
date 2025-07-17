@@ -7,6 +7,58 @@
 <meta name="description" content="HomeTown is a design-forward marketing agency in Kansas City, crafting bespoke brand experiences, websites, and growth strategies for local businesses.">
 <meta name="keywords" content="Kansas City marketing, small business branding, premium website design KC, local marketing Kansas City, high-end graphic design">
 
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="HomeTown | Design & Marketing for Kansas City Businesses">
+<meta property="og:description" content="A design-forward marketing agency in Kansas City, crafting bespoke brand experiences, websites, and growth strategies for local businesses.">
+<meta property="og:image" content="https://hometownmarketing.com/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://hometownmarketing.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HomeTown Marketing">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HomeTown | Design & Marketing for Kansas City Businesses">
+<meta name="twitter:description" content="A design-forward marketing agency in Kansas City, crafting bespoke brand experiences, websites, and growth strategies for local businesses.">
+<meta name="twitter:image" content="https://hometownmarketing.com/assets/images/twitter-card.jpg">
+<meta name="twitter:image:alt" content="HomeTown Marketing - Kansas City Design & Marketing Agency">
+
+<!-- Additional SEO Meta Tags -->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<link rel="canonical" href="https://hometownmarketing.com">
+<meta name="author" content="HomeTown Marketing">
+<meta name="generator" content="HomeTown Marketing Website">
+
+<!-- Content Security Policy -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.tailwindcss.com; font-src 'self' https://api.fontshare.com; img-src 'self' https: data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+
+<!-- Geo Tags for Local SEO -->
+<meta name="geo.region" content="US-MO">
+<meta name="geo.placename" content="Kansas City">
+<meta name="geo.position" content="39.0997;-94.5786">
+<meta name="ICBM" content="39.0997, -94.5786">
+
+<!-- Critical CSS for above-the-fold content -->
+<style>
+/* Critical styles for hero section to improve FCP */
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #F9F9F9; color: #1D1D1F; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.hero-section { min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 6rem; background: #F9F9F9; }
+.hero-title { font-size: 3rem; font-weight: 700; line-height: 1; margin-bottom: 1.5rem; }
+.hero-subtitle { font-size: 1.25rem; margin-top: 1.5rem; color: #555555; max-width: 48rem; margin-left: auto; margin-right: auto; }
+.cta-button { display: inline-block; padding: 1rem 2.5rem; border-radius: 0.375rem; font-weight: 600; margin-top: 3rem; background: linear-gradient(to right, #004643, #00796B); color: #F9F9F9; text-decoration: none; }
+.gradient-text { background: linear-gradient(to right, #004643, #00796B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+@media (min-width: 768px) { .hero-title { font-size: 4rem; } .hero-subtitle { font-size: 1.5rem; } }
+@media (min-width: 1024px) { .hero-title { font-size: 5rem; } }
+</style>
+
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -28,11 +80,76 @@ tailwind.config = {
 </script>
 
 
-<!-- Font: Satoshi -->
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
+<!-- Preload Critical Resources -->
+<link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet"></noscript>
+<link rel="preload" href="/assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.css"></noscript>
+<link rel="preload" href="/assets/js/main.js" as="script">
 
-<!-- Custom Styles -->
-<link rel="stylesheet" href="/assets/css/style.css">
+<!-- DNS Prefetch for External Resources -->
+<link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+<link rel="dns-prefetch" href="//api.fontshare.com">
+<link rel="dns-prefetch" href="//images.unsplash.com">
+
+<!-- Structured Data for Local SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://hometownmarketing.com",
+  "name": "HomeTown Marketing",
+  "url": "https://hometownmarketing.com",
+  "logo": "https://hometownmarketing.com/assets/images/logo.png",
+  "description": "A design-forward marketing agency in Kansas City, crafting bespoke brand experiences, websites, and growth strategies for local businesses.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kansas City",
+    "addressRegion": "MO",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "39.0997",
+    "longitude": "-94.5786"
+  },
+  "telephone": "+1-816-XXX-XXXX",
+  "priceRange": "$$$",
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "sameAs": [
+    "https://www.linkedin.com/company/hometown-marketing-kc",
+    "https://www.instagram.com/hometown_marketing_kc"
+  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "Kansas City",
+    "sameAs": "https://en.wikipedia.org/wiki/Kansas_City,_Missouri"
+  },
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": "39.0997",
+      "longitude": "-94.5786"
+    },
+    "geoRadius": "50000"
+  },
+  "knowsAbout": [
+    "Digital Marketing",
+    "Web Design",
+    "Brand Identity",
+    "Social Media Management",
+    "SEO",
+    "Paid Advertising",
+    "Content Creation"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "47"
+  }
+}
+</script>
 </head>
 <body class="text-base md:text-lg">
 
@@ -64,20 +181,25 @@ tailwind.config = {
 <!-- Main Content -->
 <main>
 <!-- Hero Section -->
-<section class="min-h-[80vh] flex items-center justify-center text-center pt-24 md:pt-0 bg-bg-light">
-<div class="container mx-auto px-6">
-    <div class="split-parent">
-        <h1 id="hero-title" class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter split-child">We Build Brands That <span class="gradient-text">Grow</span>.</h1>
+<section class="hero-section above-fold hero-parallax parallax-container">
+    <!-- Background decorative elements -->
+    <div class="shape-decoration shape-circle" style="width: 100px; height: 100px; top: 20%; right: 10%;"></div>
+    <div class="shape-decoration shape-square" style="width: 60px; height: 60px; top: 60%; left: 5%;"></div>
+    <div class="shape-decoration shape-circle" style="width: 80px; height: 80px; bottom: 20%; right: 20%;"></div>
+    
+    <div class="container parallax-fg">
+        <div class="split-parent">
+            <h1 id="hero-title" class="hero-title split-child floating-element">We Build Brands That <span class="gradient-text">Grow</span>.</h1>
+        </div>
+        <div class="split-parent">
+            <h2 id="hero-subtitle" class="hero-subtitle split-child parallax-element" data-speed="0.5">A Kansas City marketing agency dedicated to building clear, effective strategies and beautiful digital experiences for local businesses.</h2>
+        </div>
+        <div class="split-parent">
+            <a href="/contact.html" id="hero-cta" class="cta-button split-child parallax-element" data-speed="0.3">
+                Start a Project
+            </a>
+        </div>
     </div>
-    <div class="split-parent">
-        <h2 id="hero-subtitle" class="text-xl md:text-2xl mt-6 text-text-dark max-w-2xl mx-auto split-child">A Kansas City marketing agency dedicated to building clear, effective strategies and beautiful digital experiences for local businesses.</h2>
-    </div>
-    <div class="split-parent">
-        <a href="/contact.html" id="hero-cta" class="inline-block px-10 py-4 rounded-md font-semibold mt-12 cta-button text-lg split-child">
-            Start a Project
-        </a>
-    </div>
-</div>
 </section>
 
 <!-- Marquee Section -->
@@ -106,40 +228,40 @@ tailwind.config = {
 <section class="py-20 md:py-32 bg-bg-light">
 <div class="container mx-auto px-6">
     <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 reveal-text text-text-dark">What We Do</h2>
-        <p class="text-xl text-text-dark">Transform your business with our comprehensive suite of services</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4 fade-in-up text-text-dark">What We Do</h2>
+        <p class="text-xl text-text-dark fade-in-up">Transform your business with our comprehensive suite of services</p>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-children">
-        <div class="text-center fade-in hover-lift spotlight-card bg-white p-6 rounded-lg">
-            <div class="w-16 h-16 bg-gradient-to-r from-accent-start to-accent-end rounded-full mx-auto mb-4 flex items-center justify-center">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 stagger-container">
+        <div class="text-center stagger-item service-card hover-glow bg-white p-6 rounded-lg">
+            <div class="w-16 h-16 bg-gradient-to-r from-accent-start to-accent-end rounded-full mx-auto mb-4 flex items-center justify-center floating-element">
                 <div class="w-8 h-8 bg-white rounded-full"></div>
             </div>
             <h3 class="text-xl font-bold mb-2 text-text-dark">Brand Design</h3>
             <p class="text-text-dark">Create a memorable identity that resonates with your audience</p>
         </div>
-        <div class="text-center fade-in hover-lift spotlight-card bg-white p-6 rounded-lg">
-            <div class="w-16 h-16 bg-gradient-to-r from-accent-start to-accent-end rounded-full mx-auto mb-4 flex items-center justify-center">
+        <div class="text-center stagger-item service-card hover-tilt bg-white p-6 rounded-lg">
+            <div class="w-16 h-16 bg-gradient-to-r from-accent-start to-accent-end rounded-full mx-auto mb-4 flex items-center justify-center floating-element">
                 <div class="w-8 h-8 bg-white rounded-full"></div>
             </div>
             <h3 class="text-xl font-bold mb-2 text-text-dark">Web Development</h3>
             <p class="text-text-dark">Beautiful, high-performance websites that convert visitors into customers</p>
         </div>
-        <div class="text-center fade-in hover-lift spotlight-card bg-white p-6 rounded-lg">
-            <div class="w-16 h-16 bg-gradient-to-r from-accent-start to-accent-end rounded-full mx-auto mb-4 flex items-center justify-center">
+        <div class="text-center stagger-item service-card hover-scale bg-white p-6 rounded-lg">
+            <div class="w-16 h-16 bg-gradient-to-r from-accent-start to-accent-end rounded-full mx-auto mb-4 flex items-center justify-center floating-element">
                 <div class="w-8 h-8 bg-white rounded-full"></div>
             </div>
             <h3 class="text-xl font-bold mb-2 text-text-dark">Social Media</h3>
             <p class="text-text-dark">Build engaged communities and grow your online presence</p>
         </div>
-        <div class="text-center fade-in hover-lift spotlight-card bg-white p-6 rounded-lg">
-            <div class="w-16 h-16 bg-gradient-to-r from-accent-start to-accent-end rounded-full mx-auto mb-4 flex items-center justify-center">
+        <div class="text-center stagger-item service-card card-hover bg-white p-6 rounded-lg">
+            <div class="w-16 h-16 bg-gradient-to-r from-accent-start to-accent-end rounded-full mx-auto mb-4 flex items-center justify-center floating-element">
                 <div class="w-8 h-8 bg-white rounded-full"></div>
             </div>
             <h3 class="text-xl font-bold mb-2 text-text-dark">Digital Marketing</h3>
             <p class="text-text-dark">Data-driven strategies that deliver measurable results</p>
         </div>
     </div>
-    <div class="text-center mt-12 fade-in">
+    <div class="text-center mt-12 fade-in-up">
         <a href="/services.html" class="inline-block px-8 py-3 rounded-md font-semibold bg-accent-start text-white hover:bg-accent-end transition-colors">
             View All Services
         </a>
@@ -147,14 +269,195 @@ tailwind.config = {
 </div>
 </section>
 
-<!-- Testimonial Section -->
+<!-- Dynamic Testimonial Carousel -->
 <section class="py-20 md:py-32 bg-gradient-to-r from-accent-start to-accent-end text-white relative overflow-hidden">
-<div class="container mx-auto px-6 text-center">
-    <div class="max-w-4xl mx-auto">
-        <p class="testimonial-text leading-tight fade-in text-white">"Working with HomeTown felt like a true partnership. They listened, understood our vision, and brought it to life in a way we couldn't have imagined."</p>
-        <p class="mt-8 text-lg font-semibold tracking-widest text-gray-200 uppercase fade-in">- JANE DOE, THE RUSSELL KC</p>
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+            <p class="text-gray-200 text-lg">Real results from real Kansas City businesses</p>
+        </div>
+        
+        <div class="testimonial-carousel" id="testimonial-carousel">
+            <div class="testimonial-track" id="testimonial-track">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-slide active">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="testimonial-content">
+                            <div class="stars mb-6">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <blockquote class="testimonial-text text-2xl md:text-3xl leading-tight mb-8">
+                                "Kyle transformed our coffee shop's online presence. We went from virtually no online orders to 40% of our revenue coming from digital channels."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b1e5?w=150&h=150&fit=crop&crop=face" alt="Sarah Chen" class="author-image">
+                                </div>
+                                <div class="author-info">
+                                    <div class="author-name">Sarah Chen</div>
+                                    <div class="author-title">Owner, The Roasted Bean Coffee Co.</div>
+                                    <div class="author-location">Crossroads Arts District</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-slide">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="testimonial-content">
+                            <div class="stars mb-6">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <blockquote class="testimonial-text text-2xl md:text-3xl leading-tight mb-8">
+                                "The social media strategy HomeTown created helped us build a real community. Our classes are now consistently full, and we have a waiting list!"
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Mike Rodriguez" class="author-image">
+                                </div>
+                                <div class="author-info">
+                                    <div class="author-name">Mike Rodriguez</div>
+                                    <div class="author-title">Owner, Westside Yoga Studio</div>
+                                    <div class="author-location">Westside District</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-slide">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="testimonial-content">
+                            <div class="stars mb-6">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <blockquote class="testimonial-text text-2xl md:text-3xl leading-tight mb-8">
+                                "Finally, a marketing partner who understands small businesses. Kyle's approach is personal, effective, and actually affordable."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Jessica Williams" class="author-image">
+                                </div>
+                                <div class="author-info">
+                                    <div class="author-name">Jessica Williams</div>
+                                    <div class="author-title">Owner, Plaza Dental</div>
+                                    <div class="author-location">Plaza District</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-slide">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="testimonial-content">
+                            <div class="stars mb-6">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <blockquote class="testimonial-text text-2xl md:text-3xl leading-tight mb-8">
+                                "Working with HomeTown felt like a true partnership. They listened, understood our vision, and brought it to life in a way we couldn't have imagined."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="David Kim" class="author-image">
+                                </div>
+                                <div class="author-info">
+                                    <div class="author-name">David Kim</div>
+                                    <div class="author-title">Founder, The Russell KC</div>
+                                    <div class="author-location">Downtown KC</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-slide">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="testimonial-content">
+                            <div class="stars mb-6">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <blockquote class="testimonial-text text-2xl md:text-3xl leading-tight mb-8">
+                                "Our new website increased our bookings by 150% in just three months. The attention to detail and customer service is unmatched."
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face" alt="Maria Santos" class="author-image">
+                                </div>
+                                <div class="author-info">
+                                    <div class="author-name">Maria Santos</div>
+                                    <div class="author-title">Owner, Brookside Bakery</div>
+                                    <div class="author-location">Brookside</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls -->
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn" id="prev-testimonial" aria-label="Previous testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15,18 9,12 15,6"></polyline>
+                    </svg>
+                </button>
+                <button class="carousel-btn next-btn" id="next-testimonial" aria-label="Next testimonial">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9,18 15,12 9,6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators" id="carousel-indicators">
+                <button class="indicator active" data-slide="0" aria-label="Go to testimonial 1"></button>
+                <button class="indicator" data-slide="1" aria-label="Go to testimonial 2"></button>
+                <button class="indicator" data-slide="2" aria-label="Go to testimonial 3"></button>
+                <button class="indicator" data-slide="3" aria-label="Go to testimonial 4"></button>
+                <button class="indicator" data-slide="4" aria-label="Go to testimonial 5"></button>
+            </div>
+
+            <!-- Autoplay Controls -->
+            <div class="autoplay-controls">
+                <button class="autoplay-btn" id="autoplay-toggle" aria-label="Pause autoplay">
+                    <svg class="play-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="5,3 19,12 5,21"></polygon>
+                    </svg>
+                    <svg class="pause-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                </button>
+                <span class="autoplay-label">Auto-play</span>
+            </div>
+        </div>
     </div>
-</div>
 </section>
 </main>
 
@@ -190,6 +493,117 @@ tailwind.config = {
 </div>
 </div>
 </footer>
+
+<!-- Scroll Progress Indicator -->
+<div class="scroll-progress" id="scroll-progress"></div>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5,12 12,5 19,12"></polyline>
+    </svg>
+</button>
+
+<!-- Chat Widget -->
+<div class="chat-widget" id="chat-widget">
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chat-toggle" aria-label="Open chat">
+        <div class="chat-toggle-icon">
+            <svg class="chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <svg class="close-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </div>
+        <div class="chat-notification" id="chat-notification">
+            <span class="notification-dot"></span>
+        </div>
+    </button>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chat-window">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">
+                    <div class="avatar-gradient"></div>
+                    <span class="avatar-text">HT</span>
+                </div>
+                <div class="chat-header-text">
+                    <h3 class="chat-title">HomeTown Assistant</h3>
+                    <p class="chat-status">
+                        <span class="status-dot"></span>
+                        Usually replies in a few minutes
+                    </p>
+                </div>
+            </div>
+            <button class="chat-minimize" id="chat-minimize" aria-label="Minimize chat">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <div class="avatar-gradient"></div>
+                    <span class="avatar-text">HT</span>
+                </div>
+                <div class="message-content">
+                    <div class="message-bubble">
+                        <p>Hi there! 👋 I'm here to help you learn more about our services and answer any questions you might have.</p>
+                    </div>
+                    <div class="message-time">Just now</div>
+                </div>
+            </div>
+            
+            <!-- Quick Action Buttons -->
+            <div class="quick-actions" id="quick-actions">
+                <p class="quick-actions-title">How can I help you today?</p>
+                <div class="quick-action-buttons">
+                    <button class="quick-action-btn" data-action="pricing">
+                        💰 View Pricing
+                    </button>
+                    <button class="quick-action-btn" data-action="services">
+                        🎯 Our Services
+                    </button>
+                    <button class="quick-action-btn" data-action="portfolio">
+                        📂 See Our Work
+                    </button>
+                    <button class="quick-action-btn" data-action="contact">
+                        📞 Get in Touch
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <input type="text" id="chat-input" class="chat-input" placeholder="Type your message..." maxlength="500">
+                <button class="chat-send" id="chat-send" aria-label="Send message">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                    </svg>
+                </button>
+            </div>
+            <div class="chat-typing-indicator" id="chat-typing">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="typing-text">HomeTown Assistant is typing...</span>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- JavaScript -->
 <script src="/assets/js/main.js"></script>

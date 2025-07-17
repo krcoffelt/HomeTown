@@ -6,6 +6,12 @@
     <title>Our Work | HomeTown Marketing</title>
     <meta name="description" content="Explore our portfolio of successful projects for Kansas City businesses. See how we've helped local companies grow through strategic design and marketing.">
     
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.tailwindcss.com; font-src 'self' https://api.fontshare.com; img-src 'self' https: data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -53,17 +59,17 @@
                 </div>
                 
                 <!-- Quick Stats -->
-                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                    <div class="text-center">
-                        <div class="text-4xl font-bold gradient-text mb-2">50+</div>
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto stagger-container">
+                    <div class="text-center stagger-item">
+                        <div class="text-4xl font-bold gradient-text mb-2 counter" data-target="50">50+</div>
                         <p class="text-text-muted">Local Businesses Helped</p>
                     </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold gradient-text mb-2">300%</div>
+                    <div class="text-center stagger-item">
+                        <div class="text-4xl font-bold gradient-text mb-2 counter" data-target="300">300%</div>
                         <p class="text-text-muted">Average Growth Rate</p>
                     </div>
-                    <div class="text-center">
-                        <div class="text-4xl font-bold gradient-text mb-2">2 Years</div>
+                    <div class="text-center stagger-item">
+                        <div class="text-4xl font-bold gradient-text mb-2 counter" data-target="2">2 Years</div>
                         <p class="text-text-muted">Serving Kansas City</p>
                     </div>
                 </div>
@@ -73,12 +79,12 @@
         <!-- Portfolio Filters -->
         <section class="py-12 bg-bg-alt">
             <div class="container mx-auto px-6">
-                <div class="flex flex-wrap justify-center gap-4">
-                    <button class="filter-btn active px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="all">All Work</button>
-                    <button class="filter-btn px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="branding">Branding</button>
-                    <button class="filter-btn px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="web">Web Design</button>
-                    <button class="filter-btn px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="social">Social Media</button>
-                    <button class="filter-btn px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="marketing">Marketing</button>
+                <div class="flex flex-wrap justify-center gap-4" role="group" aria-label="Portfolio filter buttons">
+                    <button class="filter-btn active px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="all" aria-pressed="true" aria-label="Show all portfolio projects">All Work</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="branding" aria-pressed="false" aria-label="Filter by branding projects">Branding</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="web" aria-pressed="false" aria-label="Filter by web design projects">Web Design</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="social" aria-pressed="false" aria-label="Filter by social media projects">Social Media</button>
+                    <button class="filter-btn px-6 py-3 rounded-full bg-gray-900 text-white font-semibold shine-effect" data-filter="marketing" aria-pressed="false" aria-label="Filter by marketing projects">Marketing</button>
                 </div>
             </div>
         </section>
@@ -88,10 +94,10 @@
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Large Featured Project -->
-                    <div class="portfolio-item lg:col-span-2 lg:row-span-2 group cursor-pointer" data-category="branding web">
+                    <div class="portfolio-item lg:col-span-2 lg:row-span-2 group cursor-pointer" data-category="branding web" role="article" aria-label="Featured project: The Roasted Bean Coffee Co. brand identity and website redesign">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                             <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1559028006-44d08a212079?q=80&w=2892&auto=format&fit=crop" alt="The Roasted Bean Coffee Co. - Complete Brand Identity" class="w-full h-64 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://images.unsplash.com/photo-1559028006-44d08a212079?q=80&w=2892&auto=format&fit=crop" alt="The Roasted Bean Coffee Co. - Complete Brand Identity showcase featuring modern logo design, coffee shop storefront, and branded packaging materials" class="w-full h-64 lg:h-96 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
                                 <div class="absolute top-4 left-4">
                                     <span class="px-3 py-1 bg-accent-start text-white text-sm rounded-full">Featured</span>
                                 </div>
@@ -113,10 +119,10 @@
                     </div>
 
                     <!-- Smaller Project Cards -->
-                    <div class="portfolio-item group cursor-pointer" data-category="social marketing">
+                    <div class="portfolio-item group cursor-pointer" data-category="social marketing" role="article" aria-label="Project: Westside Yoga Studio social media campaign">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                             <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2940&auto=format&fit=crop" alt="Westside Yoga Studio - Social Media Campaign" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2940&auto=format&fit=crop" alt="Westside Yoga Studio social media campaign featuring yoga poses, wellness content, and engaging Instagram posts" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
                             </div>
                             <div class="p-4">
                                 <h3 class="text-lg font-bold mb-2">Westside Yoga Studio</h3>
@@ -130,10 +136,10 @@
                         </div>
                     </div>
 
-                    <div class="portfolio-item group cursor-pointer" data-category="web marketing">
+                    <div class="portfolio-item group cursor-pointer" data-category="web marketing" role="article" aria-label="Project: Plaza Dental website redesign">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                             <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1516131206008-dd9284b72b84?q=80&w=2940&auto=format&fit=crop" alt="Plaza Dental - Website Redesign" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://images.unsplash.com/photo-1516131206008-dd9284b72b84?q=80&w=2940&auto=format&fit=crop" alt="Plaza Dental modern website redesign featuring clean layout, appointment booking system, and mobile-responsive design" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
                             </div>
                             <div class="p-4">
                                 <h3 class="text-lg font-bold mb-2">Plaza Dental</h3>
@@ -147,10 +153,10 @@
                         </div>
                     </div>
 
-                    <div class="portfolio-item group cursor-pointer" data-category="branding">
+                    <div class="portfolio-item group cursor-pointer" data-category="branding" role="article" aria-label="Project: KC Barbershop brand identity design">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                             <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop" alt="KC Barbershop - Brand Identity" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2940&auto=format&fit=crop" alt="KC Barbershop brand identity design featuring vintage-inspired logo, business cards, and traditional barbershop storefront" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
                             </div>
                             <div class="p-4">
                                 <h3 class="text-lg font-bold mb-2">KC Barbershop</h3>
@@ -164,10 +170,10 @@
                         </div>
                     </div>
 
-                    <div class="portfolio-item group cursor-pointer" data-category="marketing social">
+                    <div class="portfolio-item group cursor-pointer" data-category="marketing social" role="article" aria-label="Project: Brookside Bakery digital marketing campaign">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                             <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1515378791036-0648a814e3e6?q=80&w=2940&auto=format&fit=crop" alt="Brookside Bakery - Digital Marketing Campaign" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://images.unsplash.com/photo-1515378791036-0648a814e3e6?q=80&w=2940&auto=format&fit=crop" alt="Brookside Bakery digital marketing campaign featuring artisan bread photography, social media ads, and email marketing templates" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
                             </div>
                             <div class="p-4">
                                 <h3 class="text-lg font-bold mb-2">Brookside Bakery</h3>
@@ -181,10 +187,10 @@
                         </div>
                     </div>
 
-                    <div class="portfolio-item group cursor-pointer" data-category="web branding">
+                    <div class="portfolio-item group cursor-pointer" data-category="web branding" role="article" aria-label="Project: Westport Fitness digital transformation">
                         <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                             <div class="relative overflow-hidden">
-                                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2940&auto=format&fit=crop" alt="Westport Fitness - Complete Digital Transformation" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2940&auto=format&fit=crop" alt="Westport Fitness digital transformation including modern website, member portal, class booking system, and fitness tracking app" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy">
                             </div>
                             <div class="p-4">
                                 <h3 class="text-lg font-bold mb-2">Westport Fitness</h3>

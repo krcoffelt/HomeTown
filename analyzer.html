@@ -6,6 +6,12 @@
     <title>Growth Grader | Free Business Analysis Tool | HomeTown Marketing</title>
     <meta name="description" content="Get your free Growth Grade in 60 seconds. Discover your business's digital strengths and opportunities with our comprehensive analysis tool.">
     
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://api.fontshare.com https://cdn.tailwindcss.com; font-src 'self' https://api.fontshare.com; img-src 'self' https: data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -79,19 +85,26 @@
                     <!-- Analysis Form -->
                     <div class="bg-bg-alt rounded-lg p-8 md:p-12 shadow-xl" id="analyzer-form">
                         <h2 class="text-3xl font-bold mb-8 text-center">Start Your Free Analysis</h2>
-                        <form id="growth-grader-form">
+                        <form id="growth-grader-form" method="post" action="/api/analyze" novalidate>
+                            <!-- CSRF Token -->
+                            <input type="hidden" id="csrf-token" name="csrf_token" value="">
+                            
+                            <!-- Honeypot field to catch bots -->
+                            <input type="text" name="url" style="display:none;" tabindex="-1" autocomplete="off">
+                            
                             <div class="space-y-6">
                                 <div>
                                     <label for="business-name" class="block text-sm font-medium mb-2">Business Name</label>
-                                    <input type="text" id="business-name" name="business-name" placeholder="Enter your business name" class="w-full bg-bg-light border border-border-color rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-accent-start transition-colors" required>
+                                    <input type="text" id="business-name" name="business-name" placeholder="Enter your business name" class="w-full bg-bg-light border border-border-color rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-accent-start transition-colors" required maxlength="100" autocomplete="organization">
                                 </div>
                                 <div>
                                     <label for="website-address" class="block text-sm font-medium mb-2">Website Address</label>
-                                    <input type="url" id="website-address" name="website-address" placeholder="https://yourbusiness.com" class="w-full bg-bg-light border border-border-color rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-accent-start transition-colors" required>
+                                    <input type="url" id="website-address" name="website-address" placeholder="https://yourbusiness.com" class="w-full bg-bg-light border border-border-color rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-accent-start transition-colors" required maxlength="255" autocomplete="url">
                                 </div>
-                                <button type="submit" id="analyze-button" class="w-full px-8 py-4 rounded-md font-semibold text-lg cta-button">
+                                <button type="submit" id="analyze-button" class="w-full px-8 py-4 rounded-md font-semibold text-lg cta-button" aria-describedby="rate-limit-info">
                                     Analyze My Business
                                 </button>
+                                <p id="rate-limit-info" class="text-xs text-text-muted text-center">Limited to 3 analyses per hour per device for optimal performance</p>
                             </div>
                         </form>
                     </div>
